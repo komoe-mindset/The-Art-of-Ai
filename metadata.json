@@ -1,0 +1,6 @@
+{
+  "name": "The Art of AI - Think Before You Ask",
+  "description": "A student-facing AI thinking experience inspired by strategy, Socratic questioning, and human judgment with English and Myanmar bilingual support.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
