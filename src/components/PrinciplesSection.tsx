@@ -50,7 +50,11 @@ export const PrinciplesSection: React.FC<PrinciplesSectionProps> = ({ currentLan
               <div className="absolute top-0 right-0 w-24 h-24 bg-[radial-gradient(circle_at_top_right,rgba(217,179,95,0.08),transparent_70%)] rounded-tr-[24px] pointer-events-none" />
 
               <div>
-                <div className="text-3xl sm:text-4xl font-black text-[#d9b35f] font-serif-display tracking-tight opacity-90 group-hover:text-[#f2d78f] transition-colors">
+                <div
+                  className={`text-3xl sm:text-4xl font-black text-[#d9b35f] tracking-tight opacity-90 group-hover:text-[#f2d78f] transition-colors ${
+                    isMyanmar ? 'font-myanmar' : 'font-serif-display'
+                  }`}
+                >
                   {principle.number}
                 </div>
 

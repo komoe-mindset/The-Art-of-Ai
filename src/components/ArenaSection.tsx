@@ -8,6 +8,21 @@ interface ArenaSectionProps {
   t: TranslationData;
 }
 
+const categoryTagNames: Record<Language, Record<SocraticCategory, string>> = {
+  en: {
+    clarify: 'CLARIFY',
+    evidence: 'EVIDENCE',
+    assumption: 'ASSUMPTION',
+    counter: 'COUNTER',
+  },
+  my: {
+    clarify: 'ရှင်းလင်းစေခြင်း',
+    evidence: 'သက်သေစိစစ်ခြင်း',
+    assumption: 'ကြိုတင်ယူဆချက်',
+    counter: 'ဆန့်ကျင်ဘက် အကြောင်းပြချက်',
+  },
+};
+
 export const ArenaSection: React.FC<ArenaSectionProps> = ({ currentLang, t }) => {
   const isMyanmar = currentLang === 'my';
   const { arenaSection } = t;
@@ -123,7 +138,7 @@ export const ArenaSection: React.FC<ArenaSectionProps> = ({ currentLang, t }) =>
               {/* Guidance tip */}
               <div className="mt-8 pt-5 border-t border-white/6 flex items-center justify-between text-xs text-[#a8b0bc]">
                 <span>
-                  {isMyanmar ? 'အောက်ပါ မေးခွန်းခလုတ်များကို နှိပ်၍ AI ၏ တုံ့ပြန်မှုကို စစ်ဆေးပါ' : 'Click the inquiry buttons to cycle AI Socratic counter-questions'}
+                  {isMyanmar ? 'အောက်ပါ မေးခွန်းခလုတ်များကို နှိပ်၍ AI ၏ မေးခွန်းထုတ်ချက်များကို လေ့လာပါ' : 'Click the inquiry buttons to cycle AI Socratic counter-questions'}
                 </span>
                 <span className="text-[#d9b35f] font-mono font-bold">
                   {currentStepNumber}/{totalSteps}
@@ -157,8 +172,8 @@ export const ArenaSection: React.FC<ArenaSectionProps> = ({ currentLang, t }) =>
                       <Bot className="w-3.5 h-3.5 text-[#f2d78f]" />
                       <span>{isMyanmar ? 'ဆိုကရေးတီး AI' : 'Socratic AI Advisor'}</span>
                     </div>
-                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#d9b35f]/15 border border-[#d9b35f]/20 font-mono">
-                      {activeCategory.toUpperCase()} · #{currentStepNumber}
+                    <span className="text-[10px] px-2.5 py-0.5 rounded-full bg-[#d9b35f]/15 border border-[#d9b35f]/20 font-mono">
+                      {categoryTagNames[currentLang][activeCategory]} · {isMyanmar ? `အဆင့် ${currentStepNumber}` : `#${currentStepNumber}`}
                     </span>
                   </div>
 
@@ -178,7 +193,7 @@ export const ArenaSection: React.FC<ArenaSectionProps> = ({ currentLang, t }) =>
               {/* Action Buttons: 4 Socratic Categories */}
               <div className="mt-8 pt-4 border-t border-white/8">
                 <div className="text-[11px] font-bold text-[#a8b0bc] tracking-wider uppercase mb-2.5 flex items-center justify-between">
-                  <span>{isMyanmar ? 'တွေးခေါ်မှု စိန်ခေါ်ခလုတ်များ (နှိပ်၍ ဆက်လက်မေးမြန်းပါ)' : 'Deepen the inquiry (click to cycle questions)'}</span>
+                  <span>{isMyanmar ? 'မေးခွန်းထုတ်မှု စိန်ခေါ်ခလုတ်များ (နှိပ်၍ ဆက်လက်မေးမြန်းပါ)' : 'Deepen the inquiry (click to cycle questions)'}</span>
                   <span className="text-[#d9b35f] text-[10px] hidden sm:inline">
                     {isMyanmar ? '၃ ဆင့်စီ စူးစမ်းနိုင်သည်' : '3 levels per category'}
                   </span>

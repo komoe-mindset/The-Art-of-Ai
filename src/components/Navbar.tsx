@@ -28,7 +28,11 @@ export const Navbar: React.FC<NavbarProps> = ({ currentLang, onToggleLang, t }) 
             <span className="text-sm sm:text-base font-extrabold tracking-widest text-[#f5f2e9]">
               {t.brand.title}
             </span>
-            <span className="text-[10px] text-[#a8b0bc] tracking-wider uppercase hidden sm:inline-block">
+            <span
+              className={`text-[10px] text-[#a8b0bc] hidden sm:inline-block ${
+                currentLang === 'my' ? 'font-myanmar tracking-normal' : 'tracking-wider uppercase'
+              }`}
+            >
               {t.brand.sub}
             </span>
           </div>
@@ -165,7 +169,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentLang, onToggleLang, t }) 
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#d9b35f]/40 bg-[#d9b35f]/15 text-[#f2d78f] text-xs font-bold"
             >
               <Languages className="w-3.5 h-3.5" />
-              <span>{currentLang === 'en' ? 'မြန်မာဘာသာသို့ ပြောင်းရန်' : 'Switch to English'}</span>
+              <span>{currentLang === 'en' ? 'မြန်မာဘာသာသို့ ပြောင်းမည်' : 'Switch to English'}</span>
             </button>
           </div>
         </div>

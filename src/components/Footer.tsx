@@ -38,7 +38,7 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onToggleLang, t }) 
             id="footer-lang-toggle"
           >
             <Globe className="w-3.5 h-3.5 text-[#d9b35f]" />
-            <span>{currentLang === 'en' ? 'မြန်မာဘာသာသို့ ပြောင်းရန်' : 'Switch to English'}</span>
+            <span>{currentLang === 'en' ? 'မြန်မာဘာသာသို့ ပြောင်းမည်' : 'Switch to English'}</span>
           </button>
 
           <button

@@ -89,52 +89,60 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ currentLang, t }) => {
         <div className="absolute inset-[27%] rounded-full border border-[#d9b35f]/15 border-dashed animate-spin-reverse-slow pointer-events-none" />
 
         {/* 4 Quadrant Strategic Labels */}
-        <div className="relative z-10 w-full h-[360px] flex items-center justify-center">
+        <div className="relative z-10 w-full h-[360px] sm:h-[380px] flex items-center justify-center">
           <div
-            className={`absolute left-3 top-3 text-[#d8cda8] text-xs sm:text-sm font-semibold tracking-wider opacity-85 px-2.5 py-1 rounded bg-[#090b0f]/60 border border-white/5 ${
-              isMyanmar ? 'font-myanmar' : 'font-serif-display'
+            className={`absolute left-2 sm:left-3 top-2 sm:top-3 text-[#d8cda8] text-[11px] sm:text-xs md:text-sm font-semibold opacity-90 px-2.5 py-1 rounded bg-[#090b0f]/80 border border-white/5 backdrop-blur-sm ${
+              isMyanmar ? 'font-myanmar' : 'font-serif-display tracking-wider'
             }`}
           >
             {t.hero.compassLabels.one}
           </div>
 
           <div
-            className={`absolute right-3 top-8 text-[#d8cda8] text-xs sm:text-sm font-semibold tracking-wider opacity-85 px-2.5 py-1 rounded bg-[#090b0f]/60 border border-white/5 ${
-              isMyanmar ? 'font-myanmar' : 'font-serif-display'
+            className={`absolute right-2 sm:right-3 top-6 sm:top-8 text-[#d8cda8] text-[11px] sm:text-xs md:text-sm font-semibold opacity-90 px-2.5 py-1 rounded bg-[#090b0f]/80 border border-white/5 backdrop-blur-sm ${
+              isMyanmar ? 'font-myanmar' : 'font-serif-display tracking-wider'
             }`}
           >
             {t.hero.compassLabels.two}
           </div>
 
           <div
-            className={`absolute left-3 bottom-6 text-[#d8cda8] text-xs sm:text-sm font-semibold tracking-wider opacity-85 px-2.5 py-1 rounded bg-[#090b0f]/60 border border-white/5 ${
-              isMyanmar ? 'font-myanmar' : 'font-serif-display'
+            className={`absolute left-2 sm:left-3 bottom-4 sm:bottom-6 text-[#d8cda8] text-[11px] sm:text-xs md:text-sm font-semibold opacity-90 px-2.5 py-1 rounded bg-[#090b0f]/80 border border-white/5 backdrop-blur-sm ${
+              isMyanmar ? 'font-myanmar' : 'font-serif-display tracking-wider'
             }`}
           >
             {t.hero.compassLabels.three}
           </div>
 
           <div
-            className={`absolute right-3 bottom-12 text-[#d8cda8] text-xs sm:text-sm font-semibold tracking-wider opacity-85 px-2.5 py-1 rounded bg-[#090b0f]/60 border border-white/5 ${
-              isMyanmar ? 'font-myanmar' : 'font-serif-display'
+            className={`absolute right-2 sm:right-3 bottom-8 sm:bottom-12 text-[#d8cda8] text-[11px] sm:text-xs md:text-sm font-semibold opacity-90 px-2.5 py-1 rounded bg-[#090b0f]/80 border border-white/5 backdrop-blur-sm ${
+              isMyanmar ? 'font-myanmar' : 'font-serif-display tracking-wider'
             }`}
           >
             {t.hero.compassLabels.four}
           </div>
 
           {/* Compass Core */}
-          <div className="relative w-52 h-52 rounded-full border border-[#d9b35f]/30 flex items-center justify-center shadow-[inset_0_0_40px_rgba(217,179,95,0.08)]">
+          <div className="relative w-56 h-56 sm:w-64 sm:h-64 rounded-full border border-[#d9b35f]/30 flex items-center justify-center shadow-[inset_0_0_40px_rgba(217,179,95,0.08)]">
             {/* Crosshairs */}
             <div className="absolute w-full h-[1px] bg-[#d9b35f]/20" />
             <div className="absolute h-full w-[1px] bg-[#d9b35f]/20" />
 
             {/* Inner Core Disc */}
-            <div className="w-32 h-32 rounded-full border border-[#d9b35f]/40 bg-radial from-[#d9b35f]/20 to-[#0b0f15]/95 backdrop-blur-md flex flex-col items-center justify-center text-center p-3 z-10 shadow-[0_0_30px_rgba(217,179,95,0.15)]">
-              <Compass className="w-5 h-5 text-[#f2d78f] mb-1 animate-pulse" />
-              <strong className="block text-[#f2d78f] text-xs sm:text-sm font-bold tracking-tight">
+            <div className="w-36 h-36 sm:w-40 sm:h-40 rounded-full border border-[#d9b35f]/40 bg-radial from-[#d9b35f]/20 to-[#0b0f15]/95 backdrop-blur-md flex flex-col items-center justify-center text-center p-2.5 sm:p-3 z-10 shadow-[0_0_30px_rgba(217,179,95,0.15)]">
+              <Compass className="w-5 h-5 text-[#f2d78f] mb-1 animate-pulse shrink-0" />
+              <strong
+                className={`block text-[#f2d78f] font-bold tracking-tight leading-tight ${
+                  isMyanmar ? 'font-myanmar text-[11px] sm:text-xs' : 'text-xs sm:text-sm'
+                }`}
+              >
                 {t.hero.compassCenter.title}
               </strong>
-              <small className="text-[#a8b0bc] text-[10px] sm:text-xs leading-tight whitespace-pre-line mt-0.5">
+              <small
+                className={`text-[#a8b0bc] leading-snug whitespace-pre-line mt-1 ${
+                  isMyanmar ? 'font-myanmar text-[10px] sm:text-[11px]' : 'text-[10px] sm:text-xs'
+                }`}
+              >
                 {t.hero.compassCenter.subtitle}
               </small>
             </div>

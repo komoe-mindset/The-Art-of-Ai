@@ -54,14 +54,44 @@ body::before {
   z-index: -2;
 }
 
-/* Myanmar font support */
+/* Myanmar font support & typography optimizations */
 .font-myanmar {
   font-family: 'Noto Sans Myanmar', 'Padauk', system-ui, sans-serif;
-  line-height: 1.85;
+  line-height: 1.8;
+  letter-spacing: normal;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 .font-myanmar-serif {
-  font-family: 'Noto Serif Myanmar', Georgia, 'Times New Roman', serif;
+  font-family: 'Noto Serif Myanmar', 'Noto Sans Myanmar', Georgia, 'Times New Roman', serif;
+  line-height: 1.6;
+  letter-spacing: normal;
+}
+
+/* Global Myanmar typography rules when Myanmar language is active */
+body[data-lang="my"] {
+  font-family: 'Noto Sans Myanmar', 'Padauk', system-ui, sans-serif;
+}
+
+body[data-lang="my"] .font-serif-display {
+  font-family: 'Noto Serif Myanmar', 'Noto Sans Myanmar', Georgia, serif;
+  line-height: 1.45;
+  letter-spacing: normal;
+}
+
+body[data-lang="my"] .eyebrow-accent {
+  letter-spacing: normal;
+  text-transform: none;
+  font-feature-settings: normal;
+}
+
+body[data-lang="my"] h1,
+body[data-lang="my"] h2,
+body[data-lang="my"] h3,
+body[data-lang="my"] h4 {
+  letter-spacing: normal;
+  text-rendering: optimizeLegibility;
 }
 
 .font-serif-display {

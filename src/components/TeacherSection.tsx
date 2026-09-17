@@ -139,25 +139,25 @@ export const TeacherSection: React.FC<TeacherSectionProps> = ({ currentLang, t }
                     <div
                       key={step.level}
                       onClick={() => setActiveStep(isSelected ? null : step.level)}
-                      className={`grid grid-cols-[38px_110px_1fr] sm:grid-cols-[44px_130px_1fr] items-center gap-2.5 sm:gap-3 p-2.5 sm:p-3 rounded-xl border cursor-pointer transition-all duration-200 ${
+                      className={`grid grid-cols-[36px_1fr] sm:grid-cols-[44px_140px_1fr] items-start sm:items-center gap-2.5 sm:gap-3 p-2.5 sm:p-3 rounded-xl border cursor-pointer transition-all duration-200 ${
                         isSelected
                           ? 'border-[#d9b35f] bg-[#d9b35f]/15 shadow-[0_0_20px_rgba(217,179,95,0.15)] -translate-x-1'
                           : 'border-white/6 bg-white/[0.025] hover:border-white/15 hover:bg-white/[0.04]'
                       }`}
                     >
-                      <div className="w-8 h-8 rounded-full border border-[#d9b35f]/40 flex items-center justify-center text-[#f2d78f] font-mono font-bold text-xs bg-[#d9b35f]/10">
+                      <div className="w-8 h-8 rounded-full border border-[#d9b35f]/40 flex items-center justify-center text-[#f2d78f] font-mono font-bold text-xs bg-[#d9b35f]/10 shrink-0 row-span-2 sm:row-span-1">
                         {step.level}
                       </div>
 
                       <strong
                         className={`text-xs sm:text-sm text-[#f5f2e9] font-bold tracking-wide ${
-                          isMyanmar ? 'font-myanmar' : ''
+                          isMyanmar ? 'font-myanmar leading-normal' : ''
                         }`}
                       >
                         {step.title}
                       </strong>
 
-                      <div className="flex flex-col">
+                      <div className="flex flex-col col-start-2 sm:col-start-3">
                         <span
                           className={`text-xs sm:text-sm font-semibold text-[#f2d78f] ${
                             isMyanmar ? 'font-myanmar leading-relaxed' : ''
